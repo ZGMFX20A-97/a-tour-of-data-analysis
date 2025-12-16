@@ -1,0 +1,715 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.17.7"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "fcbda35555ea6fd716f9136af4a36f4d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"ec\">\u5b9f\u8df5\uff1a\u30a4\u30ae\u30ea\u30b9EC\u30b5\u30a4\u30c8\u306e\u5e02\u5834\u8ca9\u58f2\u30c7\u30fc\u30bf</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "2e8831434d0f121d6eb02ca11eff81a8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"_1\">\u76ee\u6a19</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "307867e0b09528ed16724bf77c9c450f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">\u3053\u306e\u30c7\u30fc\u30bf\u5206\u6790\u306e\u76ee\u7684\u306f\u3001\u5e02\u5834\u8ca9\u58f2\u30c7\u30fc\u30bf\u306b\u57fa\u3065\u3044\u3066\u3001\u58f2\u308c\u884c\u304d\u306e\u826f\u3044\u88fd\u54c1\u3092\u767a\u6398\u3057\u3001\u3088\u308a\u52b9\u679c\u7684\u306a\u30de\u30fc\u30b1\u30c6\u30a3\u30f3\u30b0\u6226\u7565\u3092\u7b56\u5b9a\u3057\u3066\u53ce\u76ca\u3092\u5411\u4e0a\u3055\u305b\u308b\u3053\u3068\u3067\u3059\u3002</span>\n<span class=\"paragraph\">\u3053\u306e\u5b9f\u8df5\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u306e\u76ee\u7684\u306f\u3001\u30c7\u30fc\u30bf\u306e\u30af\u30ea\u30fc\u30f3\u5ea6\u3068\u6574\u7136\u5ea6\u3092\u8a55\u4fa1\u3059\u308b\u7df4\u7fd2\u3092\u884c\u3044\u3001\u8a55\u4fa1\u7d50\u679c\u306b\u57fa\u3065\u3044\u3066\u30c7\u30fc\u30bf\u3092\u30af\u30ea\u30fc\u30cb\u30f3\u30b0\u3057\u3001\u6b21\u306e\u5206\u6790\u306b\u4f7f\u7528\u3067\u304d\u308b\u30c7\u30fc\u30bf\u3092\u5f97\u308b\u3053\u3068\u3067\u3059\u3002</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "645f28e048d01e55a30606aa35587643",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"_1\">\u7d39\u4ecb</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "4094ae18be47734f6baeddaec1e603ed",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">\u30ab\u30e9\u30e0\u306e\u5b9a\u7fa9\uff1a</span>\n<ul>\n<li><code>InvoiceNo</code>: \u30a4\u30f3\u30dc\u30a4\u30b9\u756a\u53f7\u30026\u6841\u3002\u53d6\u5f15\u3092\u8b58\u5225\u3059\u308b\u305f\u3081\u306e\u4e00\u610f\u306e\u756a\u53f7\u3002\u201cc\u201d\u3067\u59cb\u307e\u308b\u5834\u5408\u3001\u53d6\u5f15\u304c\u53d6\u308a\u6d88\u3055\u308c\u305f\u3053\u3068\u3092\u793a\u3059\u3002</li>\n<li><code>StockCode</code>: \u5546\u54c1\u30b3\u30fc\u30c9\u30025\u6841\u3002\u5546\u54c1\u3092\u8868\u3059\u4e00\u610f\u306e\u5546\u54c1\u30b3\u30fc\u30c9\u3002</li>\n<li><code>Description</code>: \u5546\u54c1\u540d\u3002</li>\n<li><code>Quantity</code>: \u53d6\u5f15\u306e\u5546\u54c1\u6570\u91cf\u3002</li>\n<li><code>InvoiceDate</code>: \u8acb\u6c42\u66f8\u304c\u767a\u884c\u3055\u308c\u305f\u65e5\u6642\u3002\u3064\u307e\u308a\u53d6\u5f15\u304c\u884c\u308f\u308c\u305f\u65e5\u6642\u3002</li>\n<li><code>UnitPrice</code>: \u5546\u54c1\u5358\u4fa1\u3002\u5358\u4f4d\u306f\u30dd\u30f3\u30c9\uff08\u00a3\uff09\u3002</li>\n<li><code>CustomerID</code>: \u30ab\u30b9\u30bf\u30de\u30fcID\u30025\u6841\u3002\u30ab\u30b9\u30bf\u30de\u30fc\u306b\u95a2\u3059\u308b\u4e00\u610f\u306eID\u3002</li>\n<li><code>Country</code>: \u56fd\u540d\u3002\u30ab\u30b9\u30bf\u30de\u30fc\u6240\u5728\u306e\u56fd\u540d\u3002</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "35c51365640960232749496e687493e6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"_1\">\u30c7\u30fc\u30bf\u306e\u8aad\u307f\u8fbc\u307f</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "35ea41c53f56c7b0dd08767b205f203f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"_1\">\u30c7\u30fc\u30bf\u306e\u6574\u7406</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "543db18b35cecfd1c8561c660e7b78d6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h4 id=\"_1\">\u30c7\u30fc\u30bf\u306e\u6574\u7136\u5ea6</h4></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "bcd5f2cb75bc79832db52e9aaace3d7b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>\u30e9\u30f3\u30c0\u30e0\u306b10\u500b\u3092\u53d6\u308a\u51fa\u3057\u3066\u89b3\u5bdf\u3059\u308b</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "aa3b6c1f23fefc6876b1bcc8897bf591",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h4 id=\"_1\">\u30c7\u30fc\u30bf\u306e\u30af\u30ea\u30fc\u30f3\u5ea6</h4></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iLit",
+      "code_hash": "19871fba51b6d03859080a5d2bdaf90a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>\u51fa\u529b\u7d50\u679c\u304b\u3089\u3059\u308b\u3068\u3001Description\u3068CustomerID\u306b\u306f\u6b20\u640d\u5024\u304c\u5b58\u5728\u3059\u308b\u3002\n\u304b\u3064\u3001InvoiceDate\u306fDate\u578b\u3067\u3042\u308b\u306f\u305a\u3001CustomerID\u306ffloat\u3067\u306f\u306a\u304fString\u3067\u3042\u308b\u3079\u304d</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "46c358ff288af2823e5f49bae37f752d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h4 id=\"_1\">\u6b20\u640d\u5024</h4></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "605a084ee4b51846506813c4b7c8ec0f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Description\u306e\u6b20\u640d\u30c7\u30fc\u30bf\u3092\u62bd\u51fa\u3059\u308b</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "bfd3af1990b82fc5749636eb2af01a3d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>1454\u500b\u6b20\u640d\u3057\u3066\u3044\u308b\u30c7\u30fc\u30bf\u3092\u767a\u898b\u3001\u3053\u308c\u3089\u306e\u30c7\u30fc\u30bf\u306e\u4e2d\u3067UnitPrice\u304c\u4e00\u898b\u5168\u90e80\u306b\u306a\u3063\u3066\u3044\u308b\u304c\u3001</strong></span>\n<span class=\"paragraph\"><strong>\u5ff5\u306e\u70baUnitPrice\u304c0\u3067\u306a\u3044\u6b20\u640d\u30c7\u30fc\u30bf\u304c\u5b58\u5728\u3059\u308b\u304b\u3092\u691c\u8a3c\u3059\u308b</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "DnEU",
+      "code_hash": "62539142c926f0588eaf53bc105fbe96",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>\u306a\u3044</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ulZA",
+      "code_hash": "44b47b05cc8a383a95104c6041b46a51",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>CustomerID\u304c\u6b20\u640d\u3057\u3066\u3044\u308b\u30c7\u30fc\u30bf\u3092\u62bd\u51fa\u3059\u308b</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Pvdt",
+      "code_hash": "4785fb81dc066a771bda613281b63054",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>\u7d50\u69cb\u5b58\u5728\u3059\u308b\u3051\u3069\u5206\u6790\u306b\u306f\u652f\u969c\u3092\u304d\u305f\u3055\u306a\u3044\u306e\u3067\u6b8b\u3059</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZBYS",
+      "code_hash": "530cfe79b22e53d8fcf4ccf29003342e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h4 id=\"_1\">\u91cd\u8907\u30c7\u30fc\u30bf</h4></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aLJB",
+      "code_hash": "080194e2ed3944d44b2cdbab45eb9818",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>InvoiceNo\u3001StockCode\u3001CustomerID\u306f\u5168\u90e8\u4e00\u610f\u3067\u3042\u308b\u304c\u3001\u4e00\u56de\u306e\u53d6\u5f15\u3067\u9055\u3046\u5546\u54c1\u304c\u5b58\u5728\u3059\u308b\u3053\u3068\u3082\u3042\u308b\u305f\u3081InvoiceNo\u306f\u91cd\u8907\u3057\u3066\u3082\u826f\u3044\u3002</strong></span>\n<span class=\"paragraph\"><strong>\u9055\u3046\u53d6\u5f15\u3067\u540c\u3058\u5546\u54c1\u3092\u8cfc\u5165\u3055\u308c\u305f\u5834\u5408\u3092\u8003\u616e\u3057\u3066\u3001StockNo\u306e\u91cd\u8907\u3082\u8a31\u305b\u308b\u3002\u540c\u3058\u9867\u5ba2\u304c\u8907\u6570\u56de\u306e\u8cfc\u5165\u3082\u3067\u304d\u308b\u305f\u3081\u3001CustomerID\u306e\u91cd\u8907\u3082\u8a31\u5bb9\u3067\u304d\u308b</strong></span>\n<span class=\"paragraph\"><strong>\u3088\u3063\u3066\u3001\u91cd\u8907\u30c7\u30fc\u30bf\u306e\u51e6\u7406\u306f\u30b9\u30ad\u30c3\u30d7\u3057\u3066\u3082\u826f\u3044</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nHfw",
+      "code_hash": "ace1763629178fcfec75ed320826e0bf",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h4 id=\"_1\">\u4e0d\u6574\u5408\u30c7\u30fc\u30bf\u306e\u51e6\u7406</h4></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "AjVT",
+      "code_hash": "323e12183a5e1a7c5fc5627f1e945e7d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Country\u30c7\u30fc\u30bf\u304b\u3089\u308f\u304b\u308b\u306e\u306f\u3001\u300cUSA\u300d\u300cUnited States\u300d\u304c\u30a2\u30e1\u30ea\u30ab\u306e\u3053\u3068\u3092\u793a\u3057\u3001\u300cUK\u300d\u300cU.K.\u300d\u300cUnited Kingdom\u300d\u304c\u30a4\u30ae\u30ea\u30b9\u3092\u793a\u3057\u3066\u3044\u308b</strong></span>\n<span class=\"paragraph\"><strong>\u3053\u308c\u3089\u306e\u8868\u793a\u65b9\u6cd5\u3092\u7d71\u4e00\u3059\u308b\u3079\u304d</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "pHFh",
+      "code_hash": "d245d67c0dc64d93d1c7af2ebc664845",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h4 id=\"_1\">\u7570\u5e38\u5024\u306e\u51e6\u7406</h4></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aqbW",
+      "code_hash": "88c9c52dd033b59d0091cf1447ed1cae",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Quantity\u3068UnitPrice\u306b\u8ca0\u6570\u304c\u5b58\u5728\u3059\u308b\u3002\u51e6\u7406\u304c\u5fc5\u8981</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TRpd",
+      "code_hash": "74ce38d1a91409da56b6e4703568b83c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Quanity\u304c\u8ca0\u6570\u3067\u3042\u308b\u30c7\u30fc\u30bf\u306e\u62bd\u51fa</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dNNg",
+      "code_hash": "4f8516e23700d2aee31275bbb4ea6773",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>\u7d50\u679c\u3092\u898b\u308b\u3068\u3001Quantity\u304c\u8ca0\u6570\u306b\u306a\u3063\u3066\u3044\u308b\u30c7\u30fc\u30bf\u306f\u3001InvoiceNo\u304c\u300cC\u300d\u3067\u59cb\u307e\u3063\u3066\u3044\u308b(\u3064\u307e\u308a\u53d6\u5f15\u304c\u53d6\u308a\u6d88\u3055\u308c\u305f)\u6a21\u69d8</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "yCnT",
+      "code_hash": "482af2b6734ebbf1e4394131bd98bcf5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>\u53d6\u308a\u6d88\u3055\u308c\u305f\u30c7\u30fc\u30bf\u3092\u3055\u3089\u306b\u62bd\u51fa\u3059\u308b\u3068</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kqZH",
+      "code_hash": "6d1cabfb61d2dbbaaaad1ee9f3a16549",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>\u63a8\u6e2c\u304c\u9593\u9055\u3063\u305f\u3002\u53d6\u308a\u6d88\u3057\u305f\u30c8\u30ec\u30fc\u30c9\u306eQuantity\u304c\u5168\u90e8\u8ca0\u6570\u306b\u306a\u3063\u3066\u3044\u308b\u308f\u3051\u3067\u306f\u306a\u3044\u30001336/10624</strong></span>\n<span class=\"paragraph\"><strong>\u305f\u3060\u3001UnitPrice\u306e\u5024\u3082\u6c17\u306b\u306a\u308b\u3002InvoiceNo\u306e\u5148\u982d\u304cC\u3058\u3083\u306a\u304f\u3001\u304b\u3064Quantity\u304c\u8ca0\u6570\u306e\u30c7\u30fc\u30bf\u306eUnitPrice\u306f\u5fc5\u305a0\u3067\u3042\u308b\u53ef\u80fd\u6027\u306f\uff1f</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "rEll",
+      "code_hash": "94fceea8e0e620925425f670c6b0700f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>\u7d50\u8ad6\uff1a</strong></span>\n<span class=\"paragraph\"><strong>Quantity\u304c0\u3067\u3042\u308b\u5834\u5408</strong></span>\n<span class=\"paragraph\"><strong>1.InvoiceNo\u306fC\u304b\u3089\u59cb\u307e\u308b</strong></span>\n<span class=\"paragraph\"><strong>2.UnitPrice\u306f0</strong></span>\n<span class=\"paragraph\"><strong>\u3053\u308c\u3089\u306f\u6709\u52b9\u306a\u30c7\u30fc\u30bf\u3067\u306f\u306a\u304f\u3001\u5206\u6790\u306e\u90aa\u9b54\u306b\u306a\u3063\u3066\u3057\u307e\u3046\u305f\u3081\u6574\u7406\u304c\u5fc5\u8981</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dGlV",
+      "code_hash": "0bb4313ad68796195297acba390830e7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>\u6b21\u306fUnitprice\u304c\u8ca0\u6570\u306e\u30c7\u30fc\u30bf\u3092\u62bd\u51fa\u3059\u308b</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lgWD",
+      "code_hash": "3d72ea001322c1a3451cd8873c57c297",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>\u4e8c\u3064\u5b58\u5728\u3001\u6d88\u3059</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "yOPj",
+      "code_hash": "f5f5955d7366b051440be33c93cf4e33",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"_1\">\u30c7\u30fc\u30bf\u306e\u51e6\u7406</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "fwwy",
+      "code_hash": "c249195660069736096ddc5fca66fb32",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>\u8aad\u307f\u8fbc\u307f\u30c7\u30fc\u30bf\u306b\u305d\u306e\u307e\u307e\u64cd\u4f5c\u305b\u305a\u3001\u30b3\u30d4\u30fc\u3092\u4f5c\u3063\u3066\u51e6\u7406\u3092\u884c\u3046</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "urSm",
+      "code_hash": "253da3caab69e3e456e259a61a0a8ed9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>\u307e\u305aInvoiceDate\u3092float\u578b\u304b\u3089datetime\u578b\u3078\u5909\u63db\u3059\u308b</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "mWxS",
+      "code_hash": "061c221f788250bb9c0250e5dc4b692c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>\u6b21\u306fCustomerID\u3092float\u578b\u304b\u3089string\u306b\u5909\u63db\u3059\u308b</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "YWSi",
+      "code_hash": "f59e992cad772c56148ca50ee6356ff6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>\u5143\u306e\u30c7\u30fc\u30bf\u304cfloat\u578b\u3060\u3063\u305f\u305f\u3081\u3001\u672b\u5c3e\u306b.0\u304c\u3064\u3044\u3066\u3044\u308b\u3002ID\u306b.0\u306f\u4e0d\u5fc5\u8981\u306a\u305f\u3081\u5207\u308a\u53d6\u308b</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "tZnO",
+      "code_hash": "07475fa2afb2cfa93de3d5b92b55ca60",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Description\u304c\u6b20\u640d\u3057\u3066\u3044\u308b\u30c7\u30fc\u30bf\u3092\u30c9\u30ed\u30c3\u30d7\u3059\u308b</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "YECM",
+      "code_hash": "a3f74f3b27d5613005a565d9522cabdc",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Country\u5909\u6570\u306e\u300cUSA\u300d\u3092\u300cUnited States\u300d\u306b\u5909\u63db\u3059\u308b</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "EJmg",
+      "code_hash": "5b717cb2e8b2bb4358055644be31a807",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Country\u5909\u6570\u306e\u300cUK\u300d\u3068\u300cU.K.\u300d\u3092\u300cUnited States\u300d\u306b\u5909\u63db\u3059\u308b</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kLmu",
+      "code_hash": "87c763be806bbe4c1f5c1822719f7c6c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Quantity\u304c\u8ca0\u6570\u306e\u30c7\u30fc\u30bf\u3092\u30c9\u30ed\u30c3\u30d7</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dlnW",
+      "code_hash": "c99efad7bc81b36259fab4628c5ded93",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>UnitPrice\u304c\u8ca0\u6570\u306e\u30c7\u30fc\u30bf\u3092\u30c9\u30ed\u30c3\u30d7</strong></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "IaQp",
+      "code_hash": "d273ac27516fc9e23fb69cbb08c66bbf",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"_1\">\u6574\u7406\u3057\u305f\u30c7\u30fc\u30bf\u3092\u4fdd\u5b58\u3059\u308b(\u5b8c\u4e86)</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "c1b7b1d18b5ff786fb8c4d2ef4e0138a",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "ed9db037328741f65f1b3df9fada18c0",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "a42c6eef90ddaefc1d28cdcab3a30250",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "9a56ccdbe9bfcfb38237bec810bfe56b",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "7f730c179e646a6cf0457e14cd6985f2",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Vxnm",
+      "code_hash": "e692a8030222b2da13436ee227e261f7",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "ecfG",
+      "code_hash": "5440259aef255efdbd79a0ce260fdabe",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "xXTn",
+      "code_hash": "13a087e7d80fdc351a956cc657e3d5bc",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "NCOB",
+      "code_hash": "c5faf2cfb67421958ea4eba16facecc0",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "TXez",
+      "code_hash": "d032550023cb285c2fb972fa0a9cfb50",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "wlCL",
+      "code_hash": "c244838803eea377cc1d225434618459",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "wAgl",
+      "code_hash": "625683b362bb40ca0cb261b87c0edc92",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "SdmI",
+      "code_hash": "5fdf7ee9f2bbcbf6d64cf024709b6a9e",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "LJZf",
+      "code_hash": "12c5a9688a5d9837b1f726450135d8d1",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "jxvo",
+      "code_hash": "378dae1170f28ab6958d58a5cf0dc66b",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "CcZR",
+      "code_hash": "a0571f62e5b3da4e55a497fc47c5d7b2",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "zlud",
+      "code_hash": "1b6d6e1661f05638b56cc29e15546728",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "xvXZ",
+      "code_hash": "d5264f969c205a85f3bc169a9a85fd81",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "CLip",
+      "code_hash": "3494ffad6580dd050e9268f64a00a8de",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "cEAS",
+      "code_hash": "48cfd386227e7f83d527ab5739df817e",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "iXej",
+      "code_hash": "971cc5903e9de18973764ea67708f98b",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "UmEG",
+      "code_hash": "e4ef548afad4ca19d771d282d5e7905d",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "vEBW",
+      "code_hash": "cc26c4ce2b29c38e19a5ec1f159ec17f",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "IpqN",
+      "code_hash": "94b96197539b8de4e2f25e21caa803d2",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "dxZZ",
+      "code_hash": "aae4198d395b43bfd38de162cf6f3ed0",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "TTti",
+      "code_hash": "64a2ceb9d113ccab33f323e43bc03809",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "RKFZ",
+      "code_hash": "c09e3ca4cb4fa4bca38d6e757c9cf192",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "IWgg",
+      "code_hash": "7d6abd3ba1042c1278e136ab5c50e5b6",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "fCoF",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [],
+      "console": []
+    }
+  ]
+}
